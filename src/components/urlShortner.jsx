@@ -54,7 +54,7 @@ const URLShortner = (props) => {
       })
         .then((response) => response.json())
         .then((data) => {
-          if (data === "Invalid Url") {
+          if (!data._id) {
             toast(data);
           } else {
             let urlDetails = userDetails && userDetails.urlDetails;
